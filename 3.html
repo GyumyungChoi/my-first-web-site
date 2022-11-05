@@ -11,6 +11,41 @@
     <!-- footer가 li의 형제요소가 되어버리니 주의하자
         div>(header>ul>li*2>a)+footer>p -->
         <!-- ol>(li*4>a)+footer>p -->
+    <input id="night_day" type="button" value="night" onclick="
+        // WEB2 JavaScript - 18.리팩토링 중복의 제거
+        // if(document.querySelector('#night_day').value === 'night'){
+        // document.querySelector('#night_day'). 이 코드를 this로 바꿈
+        // onclick 이벤트가 속해있는 tag(input) 자기자신을 가르키므로 this로 표현 
+        // index tag를 참조를 하는 것은 this로 하므로써 tag(input) 코드 독립적으로 사용가능
+        // document.querySelector('body') 중복되므로 variable변수로 간결 정리
+        var target = document.querySelector('body');
+        if(this.value === 'night'){
+            target.style.backgroundColor = 'balck';
+            target.style.color = 'gray'; // style.color 변경이 안됨(??? why????)
+            this.value = 'day';
+            
+            // Color 변경
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                alist[i].style.color = 'powderblue';
+                i=i+1;
+            }
+
+        } else {
+            target.style.backgroundColor = 'white';
+            target.style.color = 'black';
+            this.value = 'night';
+
+            // Color 변경
+            var alist = document.querySelectorAll('a');
+            var i = 0;
+            while(i < alist.length){
+                alist[i].style.color = 'blue';
+                i=i+1;
+            }
+        }
+    ">
     <ol>
         <li><a href="5.html">사진 동영상</a></li>
         <li><a href="1.html">HTML</a></li>
