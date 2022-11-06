@@ -5,9 +5,51 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WEB1 - Document</title>
-    <!-- jscript를 이용하여 colors.js에 있는 코드를 간단하게 정리 -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="colors.js"></script>
+    
+    <script>
+        // 코드가 많아지면 정리정돈하여 함수로 만듬
+        // 함수와 변수가 많아지면 연관된 것을 그룹핑하여 객체로 만듬
+        // 객체가 많아지면 어떻게? --> file로 작성하여 src 링크
+        // Body와 Links로 시작하는 함수들을 모아서 객체로 전환
+        var Body = {
+            setColor:function(color){
+                document.querySelector('body').style.color = color;
+            }, // Property 구분을 위해 , 사용 
+            setBackgroundColor:function(color){
+                document.querySelector('body').style.backgroundColor = color;
+            }
+        }
+        var Links = {
+            setColor:function(color){
+                var alist = document.querySelectorAll('a');
+                var i = 0;
+                while(i < alist.length){
+                    alist[i].style.color = color;
+                    i=i+1;
+                }
+            }
+        }
+        
+        function nightDayHandler(self){
+            var target = document.querySelector('body');
+            if(self.value === 'night'){
+         //       target.style.backgroundColor = "balck";
+                Body.setBackgroundColor('black');
+                //target.style.color = 'gray'; // style.color 변경이 안됨(??? why????)
+                Body.setColor('white');
+                self.value = 'day';
+                Links.setColor('powderblue');
+                
+            } else {
+                //target.style.backgroundColor = "white";
+                Body.setBackgroundColor('white');
+                <!-- target.style.color = 'black'; -->
+                Bodys.setColor('gray'); // style.color 변경이 안됨(??? why????)
+                self.value = 'night';
+                Links.setColor('blue');
+            }
+        }
+    </script>
 </head>
 <body>
     <h1><a href="index.html"> WEB Study - JavaScript</a></h1>
