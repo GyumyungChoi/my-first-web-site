@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB1 - Document</title>
+    <script src="colors.js"></script>
+    <!-- <style>
+        a{ color:red;} a tag의 문자 색상을 모두 변경하는 CSS문법 CSS는 HTML을 디자인하기 위한 코딩
+    </style> -->
+</head>
+<body>
+    <h1><a href="index.html"> WEB Study - HTML</a></h1>
+    <!-- footer가 li의 형제요소가 되어버리니 주의하자
+        div>(header>ul>li*2>a)+footer>p -->
+        <!-- ol>(li*4>a)+footer>p -->
+    <input id="night_day" type="button" value="night" onclick="nightDayHandler(this)">
+    <ol>
+        <li><a href="1.html">HTML</a></li>
+        <li><a href="2.html">CSS</a></li>
+        <li><a href="3.html">JavaScript</a></li>
+        <li><a href="4.html">Python</a></li>
+        <li><a href="5.html" style="color:red">사진 동영상</a></li>
+    </ol>
+    <h2>사진 동영상</h2>
+    <P><strong><u>가을 사진 감상</u></strong></P>
+    <img src="autumn1.PNG" width="100%" alt="가을사진1">
+    <img src="autumn2.avif" width="100%" alt="가을사진2">
+</body>
+</html>
